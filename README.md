@@ -67,15 +67,76 @@ CIRCUIT DIAGRAM
 
 
 ### PROGRAM :
- 
+ ```
+ // C++ code
+
+#include <Servo.h>
+int pos = 0;
+Servo servo_9;
+
+void setup()
+{
+  Serial.begin(9600);
+  servo_9.attach(9, 500, 2500);//
+  
+}
+
+void loop()
+{
+  for (pos = 0; pos <= 180; pos += 1) 
+  {
+    servo_9.write(pos);
+    delay(15);
+  	Serial.println(pos);
+  }
+  for (pos = 180; pos >= 0; pos -= 1) 
+  {
+    servo_9.write(pos);
+    delay(15);
+  	Serial.println(pos);
+  }
+}
+
+```
+
+### OUTPUT:
+![](https://github.com/Kishore00007/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/blob/main/ex5'1.png)
+
+
+### TOGGLE GRAPH:
+```// C++ code
+
+#include <Servo.h>
+int pos = 0;
+Servo servo_9;
+
+void setup()
+{
+  Serial.begin(9600);
+  servo_9.attach(9, 500, 2500);//
+  
+}
+
+void loop()
+{
+  for (pos = 0; pos <= 180; pos += 1) 
+  {
+    servo_9.write(pos);
+    delay(15);
+  	Serial.println(pos);
+  }
+  for (pos = 180; pos >= 0; pos -= 1) 
+  {
+    servo_9.write(pos);
+    delay(15);
+  	Serial.println(pos);
+  }
+}
 
 
 
-
-
-
-
-
+### OUTPUT:
+![](https://github.com/Kishore00007/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/blob/main/ex5'2.html)
 
 ### RESULTS: 
 Arduino uno interfacing with servo motor is learned and angular position is controlled using PWM signal.
